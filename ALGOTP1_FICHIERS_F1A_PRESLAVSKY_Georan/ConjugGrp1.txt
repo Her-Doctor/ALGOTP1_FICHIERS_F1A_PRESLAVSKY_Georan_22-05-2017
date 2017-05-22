@@ -1,0 +1,28 @@
+ENVOYER
+j'envoie
+tu envoies
+il envoie
+nous envoyons
+vous envoyez
+ils envoient
+HABITER
+j'habite
+tu habites
+il habite
+nous habitons
+vous habitez
+ils habitent
+PAYER
+je paie/paye
+tu paies/payes
+il paie/paye
+nous payons
+vous payez
+ils paient/payent
+S’AMUSER
+je m'amuse
+tu t'amuses
+il s'amuse
+nous nous amusons
+vous vous amusez
+ils s'amusent

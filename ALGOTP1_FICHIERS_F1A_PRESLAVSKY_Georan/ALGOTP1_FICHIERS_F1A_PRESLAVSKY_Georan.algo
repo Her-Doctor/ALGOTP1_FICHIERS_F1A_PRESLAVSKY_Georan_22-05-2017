@@ -1,0 +1,102 @@
+//Algo : Conjug_Verb
+//But : voir pdf
+//entree : 
+//sortie : 
+
+
+// dans les dossiers pour délimiter les verbes , ils seront tous à l'infinitif.
+// dans les dossiers pour les conjugaisons , ils seront notés comme si dessous:
+{
+	être
+	je suis
+	tu est
+	il est
+	nous sommes
+	vous êtes
+	ils sont
+}
+// la procedure ecrira toutes les conjugaisons du verbe 
+{
+
+// variables principales
+Var
+	VerbeD:Chaine
+	fgrp1,fgrp2,fgrp3: Texte
+	ResRech:booleen
+
+	procedure init ;	// initialisation et ouverture des programmes en lecture
+		debut
+			Assigner (fgrp1,'C:\FPC\3.0.0\bin\i386-win32\ALGOTP1_FICHIERS_F1A_PRESLAVSKY_Georan\ConjugGrp1.txt')
+				Ouvrir(fgrp1)
+				Assigner (fgrp2,'C:\FPC\3.0.0\bin\i386-win32\ALGOTP1_FICHIERS_F1A_PRESLAVSKY_Georan\ConjugGrp2.txt')
+					Ouvrir(fgrp2)
+					Assigner (fgrp3,'C:\FPC\3.0.0\bin\i386-win32\ALGOTP1_FICHIERS_F1A_PRESLAVSKY_Georan\ConjugGrp3.txt')
+						Ouvrir(fgrp3)
+		FinProcedure
+
+	fonction Recherche (var f : Texte): booleen; // va rechercher le verbe dans les fichiers
+		var
+		s:Chaine
+	debut
+		Recherche <- Faux
+
+			tantque (NON EoF) faire // Eof signifie end of file
+				lire (f,s)
+					Si VerbeD = s Alors
+						Recherche <-Vrai
+					finSi 
+			FinTantque
+
+	FinFonction
+
+	Procedure Conjug (var f:Texte); //va rechercher la conjugaison des verbes
+	s:chaine
+	cpt:Entier
+		Debut
+		cpt <- 0
+			Tant que (NON EoF) Faire // permet d'écrire les conjugaisons du verbe demandé
+				lire (f,s)
+				si VerbeD=s alors
+					Pour cpt de 1 a 6 faire
+						Ecrire (s)
+					FinPour 
+				FinSi
+			FinTantQue
+
+			
+		finProcedure
+
+// programme principal
+Debut
+	Ecrire "Programme de conjugaison"
+	Ecrire "entrez votre verbe"
+	lire (VerbeD)
+
+	Init // procedure
+
+		// recherche du groupe du verbe , si il est groupe 1 alors (instructions) sinon si groupe 2 alors etc...
+
+	ResRech <- Recherche(fgrp1)
+		si ResRech = Vrai alors
+			Ecrire "Le verbe " &VerbeD& " est du 1 er groupe"
+			Conjug (fgrp1)
+		Sinon
+			ResRech <- Recherche(fgrp2)
+				si ResRech = Vrai alors
+					Ecrire "Le verbe " &VerbeD& " est du 2e groupe"
+					Conjug (fgrp2)
+			Sinon
+				ResRech <- Recherche(fgrp3)
+					si ResRech = Vrai alors
+						Ecrire "Le verbe " &VerbeD& " est du 3e groupe"
+						Conjug (fgrp3)
+					Finsi
+			Sinon
+					Ecrire "Ce mot n'est pas dans la liste."
+				Finsi
+		Finsi
+
+
+Fin
+
+}

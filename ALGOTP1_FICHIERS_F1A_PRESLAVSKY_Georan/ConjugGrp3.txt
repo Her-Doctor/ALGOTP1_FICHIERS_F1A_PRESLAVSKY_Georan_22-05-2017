@@ -1,0 +1,48 @@
+RIRE
+je ris
+tu ris
+il rit
+nous rions
+vous riez
+ils rient
+RECEVOIR
+je reçois
+tu reçois
+il reçoit
+nous recevons
+vous recevez
+ils reçoivent
+ALLER
+je vais
+tu vas
+il va
+nous allons
+vous allez
+ils vont
+BOUILLIR
+je bous
+tu bous
+il bout
+nous bouillons
+vous bouillez
+ils bouillent
+PEINDRE
+je peins
+tu peins
+il peint
+nous peignons
+vous peignez
+ils peignent
+MOURIR
+je meurs
+tu meurs
+il meurt
+nous mourons
+vous mourez
+ils meurent
+VOULOIRje veux
+tu veux
+il veut
+nous voulons
+vous voulez
+ils veulent

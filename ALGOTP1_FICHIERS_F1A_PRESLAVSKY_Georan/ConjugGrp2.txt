@@ -1,0 +1,14 @@
+HAIR
+je hais
+tu hais
+il hait
+nous haïssons
+vous haïssez
+ils haïssent
+FINIR
+je finis
+tu finis
+il finit
+nous finissons
+vous finissez
+ils finissent
