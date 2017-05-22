@@ -21,18 +21,8 @@
 // variables principales
 Var
 	VerbeD:Chaine
-	fgrp1,fgrp2,fgrp3: Texte
+	f1,f2,f3: Texte
 	ResRech:booleen
-
-	procedure init ;	// initialisation et ouverture des programmes en lecture
-		debut
-			Assigner (fgrp1,'C:\FPC\3.0.0\bin\i386-win32\ALGOTP1_FICHIERS_F1A_PRESLAVSKY_Georan\ConjugGrp1.txt')
-				Ouvrir(fgrp1)
-				Assigner (fgrp2,'C:\FPC\3.0.0\bin\i386-win32\ALGOTP1_FICHIERS_F1A_PRESLAVSKY_Georan\ConjugGrp2.txt')
-					Ouvrir(fgrp2)
-					Assigner (fgrp3,'C:\FPC\3.0.0\bin\i386-win32\ALGOTP1_FICHIERS_F1A_PRESLAVSKY_Georan\ConjugGrp3.txt')
-						Ouvrir(fgrp3)
-		FinProcedure
 
 	fonction Recherche (var f : Texte): booleen; // va rechercher le verbe dans les fichiers
 		var
@@ -72,24 +62,27 @@ Debut
 	Ecrire "entrez votre verbe"
 	lire (VerbeD)
 
-	Init // procedure
-
 		// recherche du groupe du verbe , si il est groupe 1 alors (instructions) sinon si groupe 2 alors etc...
-
-	ResRech <- Recherche(fgrp1)
+Assigner (f1,'C:\FPC\3.0.0\bin\i386-win32\ALGOTP1_FICHIERS_F1A_PRESLAVSKY_Georan\ConjugGrp1.txt')
+	Ouvrir(f1)
+	ResRech <- Recherche(f1)
 		si ResRech = Vrai alors
 			Ecrire "Le verbe " &VerbeD& " est du 1 er groupe"
 			Conjug (fgrp1)
 		Sinon
-			ResRech <- Recherche(fgrp2)
+			ResRech <- Recherche(f2)
 				si ResRech = Vrai alors
+					Assigner (f2,'C:\FPC\3.0.0\bin\i386-win32\ALGOTP1_FICHIERS_F1A_PRESLAVSKY_Georan\ConjugGrp2.txt')
+						Ouvrir(fgrp2)
 					Ecrire "Le verbe " &VerbeD& " est du 2e groupe"
-					Conjug (fgrp2)
+					Conjug (f2)
 			Sinon
-				ResRech <- Recherche(fgrp3)
+				ResRech <- Recherche(f3)
 					si ResRech = Vrai alors
+						Assigner (f3,'C:\FPC\3.0.0\bin\i386-win32\ALGOTP1_FICHIERS_F1A_PRESLAVSKY_Georan\ConjugGrp3.txt')
+							Ouvrir(fgrp3)
 						Ecrire "Le verbe " &VerbeD& " est du 3e groupe"
-						Conjug (fgrp3)
+						Conjug (f3)
 					Finsi
 			Sinon
 					Ecrire "Ce mot n'est pas dans la liste."
